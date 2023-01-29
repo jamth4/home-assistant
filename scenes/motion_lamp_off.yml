@@ -1,0 +1,24 @@
+alias: desk lamp off
+description: ""
+trigger:
+  - type: no_motion
+    platform: device
+    device_id: <decice-name>
+    entity_id: binary_sensor.motion_sensor_motion
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+condition:
+  - condition: device
+    type: is_on
+    device_id: <device-name>
+    entity_id: switch.desk_lamp_state
+    domain: switch
+action:
+  - type: turn_off
+    device_id: <device-name>
+    entity_id: switch.desk_lamp_state
+    domain: switch
+mode: single
