@@ -1,0 +1,15 @@
+alias: Desk Lamp on
+description: ""
+trigger:
+  - type: motion
+    platform: device
+    device_id: <device-name>
+    entity_id: binary_sensor.motion_sensor_motion
+    domain: binary_sensor
+condition: []
+action:
+  - type: turn_on
+    device_id: <device-name>
+    entity_id: switch.desk_lamp_state
+    domain: switch
+mode: single
